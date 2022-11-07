@@ -17,6 +17,7 @@ public class SubTask3 {
         for (int i = max; i >= 1; i--) {
             if (fNum % i == 0 && sNum % i == 0) {
                 minDivider = i;
+                break;
             }
         }
         System.out.println("\n\tMin divider  = " + minDivider);

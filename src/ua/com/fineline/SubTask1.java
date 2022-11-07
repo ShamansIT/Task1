@@ -16,4 +16,5 @@ public class SubTask1 {
         System.out.println("\n\tSum number  = " + (fNum+sNum));
         sc.close();
         }
+
 }

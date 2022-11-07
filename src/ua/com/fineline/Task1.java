@@ -5,9 +5,9 @@ public class Task1 {
 
     public static void main(String[] args) {
 
+
     }
-/*
-    public class Demo(){
+/*    public class Demo(){
 
         SubTask1.main(new String[] {"5", "6"});
 

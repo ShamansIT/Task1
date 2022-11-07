@@ -6,7 +6,7 @@ public class SubTask6 {
 
     public final static String strAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    public int LetterColumnToNumber(String letter){
+    public String LetterColumnToNumber(String letter){
         // метод визначення порядкового номера стовпця за його буквеним номером
         int number = 0, resultNumber = 0;
         int lengthLetter = letter.length();
@@ -17,12 +17,12 @@ public class SubTask6 {
             number *= Math.pow(26, i);
             resultNumber += number;
         }
-        return resultNumber;
+        return String.valueOf(resultNumber);
     }
 
     public String NumberToLetterColumn(int columnNumberIn){
         // метод визначення літери стовпця за його порядковим номером
-        int letterIndex;
+        int letterIndex = 0;
         String columnLetter = "";
         String lengthNumber = String.valueOf(columnNumberIn);
 
@@ -35,9 +35,22 @@ public class SubTask6 {
         return columnLetter;
     }
 
-    public int LetterColumnToNumRight(String letter){
+    public String GetRightColumn(String letter){
         //використовуючи літеру стовпця, напишіть метод визначення номер стовпця, який розміщено праворуч від заданого.
-        return (LetterColumnToNumber(letter)+1);
+        if (!isNumeric(letter)) {
+            LetterColumnToNumber(letter);
+            letter +=1;
+            return NumberToLetterColumn(Integer.parseInt(letter));
+        }
+        else return (LetterColumnToNumber(letter)+1);
     }
 
+    public static boolean isNumeric(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 }
