@@ -12,15 +12,15 @@ public class SubTask3 {
         int sNum = sc.nextInt();
 
         int max = Math.max(fNum, sNum);
-        int minDivider = 0;
+        int maxDivider = 0;
 
         for (int i = max; i >= 1; i--) {
             if (fNum % i == 0 && sNum % i == 0) {
-                minDivider = i;
+                maxDivider = i;
                 break;
             }
         }
-        System.out.println("\n\tMin divider  = " + minDivider);
+        System.out.println("\n\tMin divider  = " + maxDivider);
         sc.close();
     }
 }
